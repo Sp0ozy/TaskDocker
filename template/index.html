@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Logs</title>
+</head>
+<body>
+    <h1>Application Logs</h1>
+
+    <h2>INFO</h2>
+    <ul>
+    {% for log in logs['INFO'] %}
+        <li>{{ log['TASKID'] }}: {{ log['MESSAGE'] }} (Execution Time: {{ log['EXECUTIONTIME'] }}s)</li>
+    {% endfor %}
+    </ul>
+
+    <h2>WARNING</h2>
+    <ul>
+    {% for log in logs['WARNING'] %}
+        <li>{{ log['TASKID'] }}: {{ log['MESSAGE'] }} (Execution Time: {{ log['EXECUTIONTIME'] }}s)</li>
+    {% endfor %}
+    </ul>
+
+    <h2>ERROR</h2>
+    <ul>
+    {% for log in logs['ERROR'] %}
+        <li>{{ log['TASKID'] }}: {{ log['MESSAGE'] }} (Execution Time: {{ log['EXECUTIONTIME'] }}s)</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
